@@ -1,0 +1,8 @@
+### UI ignores in public ###
+*.*~
+node_modules/**/*
+.grunt
+target
+reports/**/*
+junit/**/*
+css
