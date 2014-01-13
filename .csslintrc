@@ -1,0 +1,13 @@
+{
+    "ids": true,
+    "important": true,
+    "qualified-headings": true,
+    "unique-headings": true,
+    "known-properties": true,
+    "box-model":true,
+    "universal-selector":true,
+    "display-property-grouping":true,
+    "adjoining-classes": true,
+    "overqualified-elements": true
+}
+
