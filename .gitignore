@@ -1,5 +1,6 @@
 ### UI ignores in public ###
 *.*~
+.idea/**
 node_modules/**/*
 .grunt
 target
