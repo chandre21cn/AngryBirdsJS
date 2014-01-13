@@ -1,0 +1,10 @@
+Bryan Levay <blevay@hmstn.com>
+At the bare minimum you will need:
+- bootstrap-transition.js (dependency for collapses),
+- bootstrap-collapse.js and
+- bootstrap-dropdown.js for what is shown in the mockups.
+
+Andrii Lundiak:
+I'm adding all available plugins, from here: http://getbootstrap.com/2.3.2/getting-started.html
+Just in case we ned something we will ahve already.
+

@@ -6,23 +6,22 @@ module.exports = function (grunt) {
     var JSfiles = [appJSfiles, confJSfiles, specJSfiles, '!js/**/*min.js'];
 
     var config = {
-		pkg: grunt.file.readJSON('package.json'),
-
-		less : {
-			dev: {
-				files: {
-					"css/main.css": "less/main.less"
-				}
-			},
+        pkg: grunt.file.readJSON('package.json'),
+        less: {
+            dev: {
+                files: {
+                    "css/main.css": "less/main.less"
+                }
+            },
             prod: {
-				options: {
-					yuicompress: true
-				},
-				src: "less/main.less",
-				dest: "css/main-min.css"
-			}
-		},
-        jshint : {
+                options: {
+                    yuicompress: true
+                },
+                src: "less/main.less",
+                dest: "css/main-min.css"
+            }
+        },
+        jshint: {
             plsc: {
                 options: {
                     ignores: ["tests", "node_modules", "js/libs", "js/app/app.min.js"],
@@ -49,7 +48,7 @@ module.exports = function (grunt) {
             }
         },
         lesslint: {
-            plsc:{
+            plsc: {
                 options: {
                     csslint: {
                         csslintrc: ".csslintrc"
@@ -62,15 +61,14 @@ module.exports = function (grunt) {
                 src: ['less/*.less', '!less/*variables.less']
             }
         },
-
         watch: {
-			js: {
-				files: JSfiles,
+            js: {
+                files: JSfiles,
                 options: {
                     livereload: true
                 },
                 tasks: ['jshint', 'eslint']
-			},
+            },
             less: {
                 files: ['less/*.less'],
                 tasks: ['less:dev', 'less:prod', 'csslint', 'lesslint'],
@@ -78,8 +76,25 @@ module.exports = function (grunt) {
                     livereload: true
                 }
             }
-		}
-	};
+        },
+        requirejs: { // Using this grunt task, we don't need js/libs/requirejs/r.js | so we may deleete it later from codebase.
+            js: {
+                options: {
+                    baseUrl: "./",
+                    mainConfigFile: "js/app/main.js",
+                    name: "js/app/main",
+                    out: "js/app/app.min.js",
+                    findNestedDependencies: true,
+                    preserveLicenseComments: true,
+                    paths: {
+                        requireLib: "js/libs/requirejs/require"
+                    },
+                    include: ["requireLib"]
+//                    ,optimize: "none", // Details in: 91 line: https://github.com/jrburke/r.js/blob/master/build/example.build.js
+                }
+            }
+        }
+    };
     grunt.initConfig(config);
 
     grunt.loadTasks("tasks");
