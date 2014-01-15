@@ -2,11 +2,12 @@ define([
     'backbone',
     'app',
     'js/app/profile/profile_app',
-    'js/app/start/start_app',
-    'js/app/main_router'
+    'js/app/levels/levels_app',
+    'js/app/main_router',
+    'js/app/levels/levels_app'
 ],
 
-    function (Backbone, App, LoadProfile, Start, Router) {
+    function (Backbone, App, LoadProfile, Start, Router, LevelsApp) {
         var profile = {};
 
         App.addRegions({
@@ -26,6 +27,7 @@ define([
                 Backbone.history.start();
             }
             console.log("application started");
+            App.vent.trigger("create:levels");
             //Start.runStartPage(profile);
         });
 

@@ -1,0 +1,33 @@
+{"levels": [
+    {
+        "level": 1,
+        "open": true,
+        "stars": 2,
+        "score": 500
+    },
+    {
+        "level": 2,
+        "open": true,
+        "stars": 3,
+        "score": 500
+    },
+    {
+        "level": 3,
+        "open": true,
+        "stars": 0,
+        "score": 100
+    },
+    {
+        "level": 4,
+        "open": false,
+        "stars": 0,
+        "score": 0
+    },
+    {
+        "level": 5,
+        "open": false,
+        "stars": 0,
+        "score": 0
+    }
+]
+}
