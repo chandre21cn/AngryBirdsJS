@@ -11,6 +11,5 @@ define([
             gameRegion  : '.game-block'
         }
     });
-
     return new MainLayout();
 });

@@ -46,7 +46,7 @@ require.config({
         jasmineJquery                    :'js/libs/jquery/jasmine-jquery',
         underscore                       :'js/libs/underscore/underscore-min',
         bootstrap                        :'js/libs/bootstrap/js/bootstrap.min',
-        // This section should be defined in this way, because the same aliases PLSC/UX team is using
+
         'bootstrap/bootstrap-transition' :'js/libs/bootstrap/js/bootstrap-transition',
         'bootstrap/bootstrap-dropdown'   :'js/libs/bootstrap/js/bootstrap-dropdown',
         'bootstrap/bootstrap-affix'      :'js/libs/bootstrap/js/bootstrap-affix',

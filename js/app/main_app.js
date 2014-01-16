@@ -1,19 +1,18 @@
 define([
+    'marionette',
     'app',
-    'js/app/main_layout'
+    'js/app/main_layout',
+    'js/app/levels/levels_app'
 
 ],
-    function (App, MainLayout, InfoController, LevelsController, GameController) {
+    function (Marionette, App, MainLayout, LevelsController) {
 
         var MainAppController = {
             showHomePage: function () {
-                // switch main container to show home page instead of login form
-                App.mainContainer.show(MainLayout);
-
-                // render core application using appropriate controllers
-                /*InfoController.showHeader();
-                LevelsController.showNavigation();
-                GameController.showMainContent();*/
+                var mainLayout = MainLayout;
+                console.log(mainLayout);
+                App.mainContainer.show(mainLayout);
+                mainLayout.levelsRegion.show(LevelsController.getLevelsView());
             }
         };
 

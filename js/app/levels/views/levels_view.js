@@ -1,32 +1,29 @@
 define([
     'marionette',
-    'text!templates/levels.html',
-    'text!templates/level.html'
+    'text!templates/level.html',
+    'text!templates/levels.html'
 
 ], function (Marionette, LevelTemplate, LevelsTemplate) {
 
     var Views = {};
 
-    Views.CreateLevelView = Marionette.CompositeView.extend({
-        template   : LevelTemplate,
-        className  : '.leeeeeeee',
-        attributes : {
-            "data-level-number" : "123456" // TODO get level number
-        },
-        events        : {
+    Views.LevelView = Marionette.ItemView.extend({
+        template  : LevelTemplate,
+        className: "level span2",
+        events    : {
             'click .js-start-game': 'startLevel'
         },
-
         startLevel: function (level) {
             console.log(level);
         }
-
     });
 
     Views.CreateLevelsView = Marionette.CompositeView.extend({
-        template          : LevelsTemplate,
-        regions       : {
-            startGame: '.levels-block'
+        template  : LevelsTemplate,
+        itemView  : Views.LevelView,
+        itemViewContainer:'.levels',
+        initialize: function () {
+            this.collection.fetch();
         }
     });
 
