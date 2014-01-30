@@ -10,7 +10,6 @@ define([
         var MainAppController = {
             showHomePage: function () {
                 var mainLayout = MainLayout;
-                console.log(mainLayout);
                 App.mainContainer.show(mainLayout);
                 mainLayout.levelsRegion.show(LevelsController.getLevelsView());
             }

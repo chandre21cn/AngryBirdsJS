@@ -1,6 +1,10 @@
 <script type="text/template">
-        <div class="level-number span1" data-level="">
+        <div class="level-number" data-level="<%= level %>" data-open="<%= open %>">
+            <%= level %>
         </div>
-        <div class='level-stars span1'>
+        <div class='level-stars' data-star="<%= stars %>">
+        </div>
+        <div class='level-score' data-star="<%= score %>">
+            <%= score %>
         </div>
 </script>

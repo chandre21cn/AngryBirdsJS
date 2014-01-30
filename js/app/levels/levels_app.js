@@ -7,21 +7,23 @@ define([
 ],
 
     function (App, MainLayouts, LevelsView, LevelsModel, LevelsCollection) {
-
-        var RequisitionAppController = {
+        var RequisitionAppController;
+        _.extend(RequisitionAppController, Backbone.Events);
+        RequisitionAppController = {
             levelListShow : function () {
                 var levels = this.getLevelsView();
-                //console.log(levels);
-                //MainLayouts.levelsRegion.show(levels);
             },
-
             getLevelsView : function () {
                 var levelsCollection = new LevelsCollection();
-                return new LevelsView.CreateLevelsView({
+                var levelsView = new LevelsView.CreateLevelsView({
                     collection: levelsCollection
                 });
+                levelsView.on("open:new:level", function () {
+                    //console.log("11111111111");
+                    console.log("0000000000000000");
+                });
+                return levelsView;
             }
-
         };
 
         return RequisitionAppController;

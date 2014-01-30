@@ -4,7 +4,28 @@
   background: -o-linear-gradient(#c2e9ff, #e6faff, #196633); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(#c2e9ff, #e6faff, #196633); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#c2e9ff, #e6faff, #196633); /* Standard syntax */
-  .level{
+  .js-start-true{
+    margin: 10px;
+    border: 1px #0000ff solid;
     height: 100px;
+    width: 100px;
+    float: left;
+    cursor: pointer;
+    background-color: #73adff;
+    &:hover{
+      opacity: 0.7;
+    }
+  }
+  .js-start-false{
+    margin: 10px;
+    border: 1px #0000ff solid;
+    height: 100px;
+    width: 100px;
+    float: left;
+    cursor: default;
+    background-color: #466899;
+    &:hover{
+      opacity: 0.7;
+    }
   }
 }
