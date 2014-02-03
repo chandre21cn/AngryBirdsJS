@@ -28,6 +28,9 @@ define([
             //App.vent.trigger("create:levels");
             //Start.runStartPage(profile);
         });
+        App.on("start::new::level", function(level){
+            LevelsApp.startNewLevel(level);
+        });
 
         return App;
     });
